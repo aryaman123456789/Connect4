@@ -20,8 +20,11 @@ int main() {
         printBoard(board);
         int column;
         if(moves % 2 == 0) {
-            std::cout << "Player " << (moves % 2 + 1) << ", enter the column where you want to drop your disc: ";
+            std::cout << "Enter the column where you want to drop your disc: ";
             std::cin >> column;
+        } else { 
+            column = ComputerMove();
+            std::cout << "Computer drops its disc in column " << column << "\n";
         }
         if(column < 1 || column > WIDTH) {
             std::cout << "Invalid column. Please enter a number between 1 and " << WIDTH << ".\n";
